@@ -27,7 +27,8 @@ create table dept_emp (
 	emp_no int not null,
 	foreign key (emp_no) references employees(emp_no),
 	dept_no varchar not null,
-	foreign key (dept_no) references departments(dept_no)
+	foreign key (dept_no) references departments(dept_no),
+	primary key(emp_no, dept_no)
 );
 
 -- creat table of dept_manager
@@ -35,7 +36,8 @@ create table dept_manager (
 	dept_no varchar not null,
 	foreign key (dept_no) references departments(dept_no),
 	emp_no int not null,
-	foreign key (emp_no) references employees(emp_no)
+	foreign key (emp_no) references employees(emp_no),
+	primary key(dept_no, emp_no)
 );
 
 -- create table of salaries 
